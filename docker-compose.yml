@@ -1,0 +1,12 @@
+version: '3'
+services:
+  cs_canvas_backend:
+    env_file:
+      - .env
+    image: cs_canvas_backend
+    build: .
+    ports:
+      - "8069:8085"
+    volumes:
+      - ./volumes:/volumes
+    restart: unless-stopped
